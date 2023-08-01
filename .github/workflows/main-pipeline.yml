@@ -17,3 +17,9 @@ jobs:
       issues: read
       checks: write
       pull-requests: write
+
+  sca:
+    needs: build
+    name: SCA
+    uses: ./.github/workflows/sca.yml
+    secrets: inherit

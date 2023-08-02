@@ -24,7 +24,17 @@ jobs:
     uses: ./.github/workflows/sca.yml
     secrets: inherit
     permissions: write-all
-    
+
+  sast:
+    needs: build
+    name: SAST
+    uses: ./.github/workflows/sast.yml
+    secrets: inherit  
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
   license-compliance:
     needs: build
     name: License compliance

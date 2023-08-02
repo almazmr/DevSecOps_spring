@@ -7,7 +7,11 @@ on:
 jobs:
   license-finder:
   # Using https://github.com/pivotal/LicenseFinder
-    permissions: write-all
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout Repository'

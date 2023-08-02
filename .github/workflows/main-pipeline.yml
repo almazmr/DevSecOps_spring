@@ -23,11 +23,7 @@ jobs:
     name: SCA
     uses: ./.github/workflows/sca.yml
     secrets: inherit
-    permissions:
-      contents: read
-      issues: read
-      checks: write
-      pull-requests: write
+    permissions: write-all
     
   license-compliance:
     needs: build

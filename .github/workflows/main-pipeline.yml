@@ -60,5 +60,8 @@ jobs:
     name: Build docker image
     uses: ./.github/workflows/container-image-scan.yml
     secrets: inherit
+    permissions:
+      contents: read
+      packages: write
     with:
       image-tag: ${{ needs.docker.outputs.image-tag }}

@@ -29,3 +29,8 @@ jobs:
     name: License compliance
     uses: ./.github/workflows/license-compliance.yml
     secrets: inherit
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write

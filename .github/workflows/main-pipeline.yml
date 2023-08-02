@@ -63,3 +63,12 @@ jobs:
     permissions: write-all
     with:
       image-tag: ${{ needs.docker.outputs.image-tag }}
+
+  dast:
+    needs: [build,docker]
+    name: DAST Scan
+    uses: ./.github/workflows/dast.yml
+    secrets: inherit
+    permissions: write-all
+    with:
+      image-tag: ${{ needs.docker.outputs.image-tag }}  
